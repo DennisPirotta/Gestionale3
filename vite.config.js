@@ -7,14 +7,14 @@ import fs from 'fs';
 const host = 'gestionale-splade.dev'
 
 export default defineConfig({
-    server: {
-        host,
-        hmr: { host },
-        https: {
-            key: fs.readFileSync('C:\\laragon\\etc\\ssl\\laragon.key'),
-            cert: fs.readFileSync('C:\\laragon\\etc\\ssl\\laragon.crt')
-        }
-    },
+    // server: {
+    //     host,
+    //     hmr: { host },
+    //     https: {
+    //         key: fs.readFileSync('C:\\laragon\\etc\\ssl\\laragon.key'),
+    //         cert: fs.readFileSync('C:\\laragon\\etc\\ssl\\laragon.crt')
+    //     }
+    // },
     plugins: [
         laravel({
             input: "resources/js/app.js",

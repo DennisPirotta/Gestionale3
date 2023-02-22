@@ -33,7 +33,7 @@
                                 <div class="mr-2 relative inline-flex items-center justify-center w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
                                     <span class="font-medium text-gray-600 dark:text-gray-300">{{ auth()->user()->name[0] }}</span>
                                 </div>
-                                {{ auth()->user()->name }} {{ auth()->user()->name }}
+                                {{ auth()->user()->name }} {{ auth()->user()->surname }}
                                 <svg class="w-4 h-4 mx-1.5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                             </button>
 
@@ -65,6 +65,16 @@
                                                 </svg>
                                                 Archivio
                                             </a>
+                                            <Link
+                                                href="{{ route('profile.edit') }}"
+                                                class="flex items-center block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                                                role="menuitem"
+                                            >
+                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                </svg>
+                                                Profilo
+                                            </Link>
 
                                             <a
                                                 href="#"

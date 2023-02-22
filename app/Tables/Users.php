@@ -54,10 +54,11 @@ class Users extends AbstractTable
     {
         $table
             ->column('name', sortable: true)
+            ->column('surname', sortable: true)
             ->column('email', sortable: true)
             ->column(
                 key: 'company.name',
-                label: 'Azienda',
+                label: 'Company',
                 sortable: true
             )
             ->column(label: 'Actions')
