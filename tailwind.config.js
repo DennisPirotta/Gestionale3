@@ -11,7 +11,11 @@ module.exports = {
     safelist: [
         {
             pattern: /(bg|border|text|ring)-(.)-(.)/,
+        },
+        {
+            pattern: /(w)-(.)/,
         }
+
     ],
     theme: {
         extend: {},

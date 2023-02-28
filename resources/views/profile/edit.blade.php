@@ -5,8 +5,8 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="mx-2 sm:px-6 lg:px-8 grid grid-cols-2 gap-4">
+    <div class="py-4 md:py-10">
+        <div class="mx-2 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-4 grid-cols-1">
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="max-w-xl" dusk="update-profile-information">
                     @include('profile.partials.update-profile-information-form')

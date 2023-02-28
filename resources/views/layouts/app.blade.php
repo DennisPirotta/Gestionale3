@@ -1,9 +1,9 @@
-<div class="min-h-screen bg-gray-100 dark:bg-gray-700">
+<div class="min-h-screen bg-gray-100">
     @include('layouts.navigation')
     <!-- Page Content -->
     <main class="p-4 sm:ml-64">
         <div class="rounded-lg mt-14">
-        {{ $slot }}
+            {{ $slot }}
         </div>
     </main>
 </div>

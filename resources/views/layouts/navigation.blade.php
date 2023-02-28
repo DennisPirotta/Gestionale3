@@ -1,6 +1,6 @@
 <x-splade-toggle>
 
-    <nav class="fixed top-0 z-30 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+    <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between">
                 <div class="flex items-center justify-start">
@@ -10,10 +10,10 @@
                             <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
                         </svg>
                     </button>
-                    <a href="https://flowbite.com" class="flex ml-2 md:mr-24">
-                        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="FlowBite Logo" />
-                        <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Gestionale</span>
-                    </a>
+                    <Link href="{{ route('dashboard') }}" class="flex ml-2 md:mr-24">
+                        <x-application-logo/>
+                        <span class="self-center text-xl font-semibold hidden md:block whitespace-nowrap dark:text-white">Gestionale</span>
+                    </Link>
                 </div>
 
                 <div class="relative inline-block text-left">
@@ -38,7 +38,7 @@
                             </button>
 
                             <div
-                                class="absolute right-0 z-10 mt-4 w-56 origin-top-right rounded-md border border-gray-100 bg-white shadow-lg"
+                                class="overflow-hidden absolute right-0 z-10 mt-4 w-56 origin-top-right rounded-md border border-gray-100 bg-white shadow-lg"
                                 role="menu"
                                 x-cloak
                                 x-transition
@@ -106,16 +106,18 @@
                                                 Cambia Password
                                             </a>
 
-                                            <a
-                                                href="#"
-                                                class="flex items-center block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-                                                role="menuitem"
-                                            >
-                                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"></path>
-                                                </svg>
-                                                Esci
-                                            </a>
+                                            <x-splade-form action="{{ route('logout') }}">
+                                                <button
+                                                    type="submit"
+                                                    class="w-full flex items-center block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                                                    role="menuitem"
+                                                >
+                                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"></path>
+                                                    </svg>
+                                                    Esci
+                                                </button>
+                                            </x-splade-form>
                                         </div>
 
                                         <div class="p-2">
@@ -177,9 +179,9 @@
         </div>
     </nav>
 
-    <aside id="logo-sidebar" class="fixed top-0 left-0 z-20 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
+    <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
         <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
-            <ul class="space-y-2">
+            <ul class="space-y-2.5">
                 <li>
                     <x-navigation.sidenav-element :title="__('Dashboard')" :active="request()->routeIs('dashboard')" :redirect="route('dashboard')">
                         <x-slot:svg>
